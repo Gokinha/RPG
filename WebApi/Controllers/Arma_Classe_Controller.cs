@@ -18,7 +18,7 @@ namespace WebApi.Controllers
             arma_classe_Servico = new Arma_Classe_Servico();
         }
 
-        [HttpGet("Ativos")]
+        [HttpGet("Ativos ")]
         public IEnumerable<Arma_Classe> Ativos() => arma_classe_Servico.ListarTodosComEstoqueZerado();
 
 
