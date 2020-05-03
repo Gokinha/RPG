@@ -10,11 +10,11 @@ namespace WebApi.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class ArmaController : ControllerBase
+    public class Arma_Controller : ControllerBase
     {
         private readonly Arma_Servico arma_Servico;
 
-        public ArmaController()
+        public Arma_Controller()
         {
             arma_Servico = new Arma_Servico();
         }

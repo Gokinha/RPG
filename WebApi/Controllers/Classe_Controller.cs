@@ -9,11 +9,11 @@ namespace WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ClasseController : ControllerBase
+    public class Classe_Controller : ControllerBase
     {
         private readonly Classe_Servico classe_Servico;
 
-        public ClasseController()
+        public Classe_Controller()
         {
             classe_Servico = new Classe_Servico();
         }
