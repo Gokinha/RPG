@@ -11,11 +11,11 @@ namespace WebApi.Controllers
     [Route("[controller]")]
     public class Caracteristica_Raca_Controller : ControllerBase
     {
-        private readonly Caracteristica_Raca_Servico caracteristica_Raca_Servico;
+        private readonly Caracteristica_raca_Servico caracteristica_Raca_Servico;
 
         public Caracteristica_Raca_Controller()
         {
-            caracteristica_Raca_Servico = new Caracteristica_Raca_Servico();
+            caracteristica_Raca_Servico = new Caracteristica_raca_Servico();
         }
 
         [HttpGet("Ativos")]

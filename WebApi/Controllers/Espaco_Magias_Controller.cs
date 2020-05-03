@@ -11,25 +11,25 @@ namespace WebApi.Controllers
     [Route("[controller]")]
     public class Espaco_Magias_Controller : ControllerBase
     {
-        private readonly Espaco_Magias_Servico espaco_Magias_Servico;
+        private readonly Espacos_Magia_Servico espaco_Magias_Servico;
 
         public Espaco_Magias_Controller()
         {
-            espaco_Magias_Servico = new Espaco_Magias_Servico();
+            espaco_Magias_Servico = new Espacos_Magia_Servico();
         }
 
         [HttpGet("Ativos")]
-        public IEnumerable<Espaco_Magias> Ativos() => espaco_Magias_Servico.ListarTodosComEstoqueZerado();
+        public IEnumerable<Espacos_Magia> Ativos() => espaco_Magias_Servico.ListarTodosComEstoqueZerado();
 
 
         [HttpPost("Salvar")]
-        public string Salvar(Espaco_Magias entidade)
+        public string Salvar(Espacos_Magia entidade)
         {
             return espaco_Magias_Servico.Salvar(entidade);
         }
 
         [HttpDelete]
-        public string Excluir(Espaco_Magias entidade)
+        public string Excluir(Espacos_Magia entidade)
         {
             return espaco_Magias_Servico.Excluir(entidade);
         }

@@ -13,7 +13,7 @@ namespace WebApi.Controllers
     {
         private readonly Bonus_Proficiencia_Servico bonus_Proficiencia_Servico;
 
-        public CBonus_Proficiencia_Controller()
+        public Bonus_Proficiencia_Controller()
         {
             bonus_Proficiencia_Servico = new Bonus_Proficiencia_Servico();
         }

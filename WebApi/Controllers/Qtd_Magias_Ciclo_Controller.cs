@@ -11,25 +11,25 @@ namespace WebApi.Controllers
     [Route("[controller]")]
     public class Qtd_Magias_Ciclo_Controller : ControllerBase
     {
-        private readonly Qtd_Magias_Ciclo_Servico qtd_Magias_Ciclo_Servico;
+        private readonly Qtd_Magia_Ciclo_Servico qtd_Magias_Ciclo_Servico;
 
         public Qtd_Magias_Ciclo_Controller()
         {
-            qtd_Magias_Ciclo_Servico = new Qtd_Magias_Ciclo_Servico();
+            qtd_Magias_Ciclo_Servico = new Qtd_Magia_Ciclo_Servico();
         }
 
         [HttpGet("Ativos")]
-        public IEnumerable<Qtd_Magias_Ciclo> Ativos() => qtd_Magias_Ciclo_Servico.ListarTodosComEstoqueZerado();
+        public IEnumerable<Qtd_Magia_Ciclo> Ativos() => qtd_Magias_Ciclo_Servico.ListarTodosComEstoqueZerado();
 
 
         [HttpPost("Salvar")]
-        public string Salvar(Qtd_Magias_Ciclo entidade)
+        public string Salvar(Qtd_Magia_Ciclo entidade)
         {
             return qtd_Magias_Ciclo_Servico.Salvar(entidade);
         }
 
         [HttpDelete]
-        public string Excluir(Qtd_Magias_Ciclo entidade)
+        public string Excluir(Qtd_Magia_Ciclo entidade)
         {
             return qtd_Magias_Ciclo_Servico.Excluir(entidade);
         }

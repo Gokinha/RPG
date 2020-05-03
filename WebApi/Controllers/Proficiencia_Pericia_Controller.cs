@@ -19,17 +19,17 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("Ativos")]
-        public IEnumerable<Proficiencia_Pericia> Ativos() => proficiencia_Pericia_Servico.ListarTodosComEstoqueZerado();
+        public IEnumerable<Proficiencia_Pericias> Ativos() => proficiencia_Pericia_Servico.ListarTodosComEstoqueZerado();
 
 
         [HttpPost("Salvar")]
-        public string Salvar(Proficiencia_Pericia entidade)
+        public string Salvar(Proficiencia_Pericias entidade)
         {
             return proficiencia_Pericia_Servico.Salvar(entidade);
         }
 
         [HttpDelete]
-        public string Excluir(Proficiencia_Pericia entidade)
+        public string Excluir(Proficiencia_Pericias entidade)
         {
             return proficiencia_Pericia_Servico.Excluir(entidade);
         }

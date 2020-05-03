@@ -12,25 +12,25 @@ namespace WebApi.Controllers
     [Route("[controller]")]
     public class Equipamento_Inventario_Controller : ControllerBase
     {
-        private readonly Equipamento_Inventario_Servico equipamento_Inventario_Servico;
+        private readonly Equipamentos_Inventario_Servico equipamento_Inventario_Servico;
 
         public Equipamento_Inventario_Controller()
         {
-            equipamento_Inventario_Servico = new Equipamento_Inventario_Servico();
+            equipamento_Inventario_Servico = new Equipamentos_Inventario_Servico();
         }
 
         [HttpGet("Ativos")]
-        public IEnumerable<Equipamento_Inventario> Ativos() => equipamento_Inventario_Servico.ListarTodosComEstoqueZerado();
+        public IEnumerable<Equipamentos_Inventario> Ativos() => equipamento_Inventario_Servico.ListarTodosComEstoqueZerado();
 
 
         [HttpPost("Salvar")]
-        public string Salvar(Equipamento_Inventario entidade)
+        public string Salvar(Equipamentos_Inventario entidade)
         {
             return equipamento_Inventario_Servico.Salvar(entidade);
         }
 
         [HttpDelete]
-        public string Excluir(Equipamento_Inventario entidade)
+        public string Excluir(Equipamentos_Inventario entidade)
         {
             return equipamento_Inventario_Servico.Excluir(entidade);
         }
