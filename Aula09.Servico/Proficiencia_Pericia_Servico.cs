@@ -11,21 +11,20 @@ namespace Aula09.Servico
         private readonly Proficiencia_Pericia_Repositorio _proficiencia_Pericia_Repositorio;
         public Proficiencia_Pericia_Servico()
         {
-            _proficiencia_Pericia_Repositorio = new Proficiencia_Pericia_Repositorio();
+            _proficiencia_Pericia_Repositorio = new Proficiencia_Pericias_Repositorio();
         }
 
-
-        public string Salvar(Proficiencia_Pericia entidade)
+        public string Salvar(Proficiencia_Servico entidade)
         {
             return "Ok";
         }
 
-        public string Excluir(Proficiencia_Pericia entidade)
+        public string Excluir(Proficiencia_Pericias entidade)
         {
             return "";
         }
 
-        public IEnumerable<Proficiencia_Pericia> ListarTodosComEstoqueZerado()
+        public IEnumerable<Proficiencia_Pericias> ListarTodosComEstoqueZerado()
         {
             return _proficiencia_Pericia_Repositorio.ListarTodosComEstoqueZerado();
         }
