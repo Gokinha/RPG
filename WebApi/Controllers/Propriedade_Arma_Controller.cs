@@ -19,7 +19,10 @@ namespace WebApi.Controllers
         }
 
         [HttpGet("Ativos")]
-        public IEnumerable<Propriedade_Arma> Ativos() => raca_Servico.ListarTodosComEstoqueZerado();
+        public IEnumerable<Propriedade_Arma> ListarTodosComEstoqueZerado()
+        {
+            return propriedade_Arma_Servico.ListarTodosComEstoqueZerado();
+        }
 
 
         [HttpPost("Salvar")]

@@ -8,13 +8,13 @@ namespace Aula09.Servico
     public class Proficiencia_Pericia_Servico
     {
 
-        private readonly Proficiencia_Pericia_Repositorio _proficiencia_Pericia_Repositorio;
+        private readonly Proficiencia_Pericias_Repositorio _proficiencia_Pericia_Repositorio;
         public Proficiencia_Pericia_Servico()
         {
             _proficiencia_Pericia_Repositorio = new Proficiencia_Pericias_Repositorio();
         }
 
-        public string Salvar(Proficiencia_Servico entidade)
+        public string Salvar(Proficiencia_Pericias entidade)
         {
             return "Ok";
         }

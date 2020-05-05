@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Aula09.Dados
 {
-    public class Proficiencia_Arma_Repositorio : RepositorioBase<Proficiencia_Arma_Classe>
+    public class Proficiencia_Arma_Repositorio : RepositorioBase<Proficiencia_Arma>
     {
         public IEnumerable<Proficiencia_Arma> ListarTodosComEstoqueZerado()
         {
