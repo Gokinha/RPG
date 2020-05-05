@@ -9,16 +9,16 @@ namespace WebApi.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class Arma_ClasseController : ControllerBase
+    public class Arma_Classe_Controller : ControllerBase
     {
         private readonly Arma_Classe_Servico arma_classe_Servico;
 
-        public Arma_ClasseController()
+        public Arma_Classe_Controller()
         {
             arma_classe_Servico = new Arma_Classe_Servico();
         }
 
-        [HttpGet("Ativos")]
+        [HttpGet("Ativos ")]
         public IEnumerable<Arma_Classe> Ativos() => arma_classe_Servico.ListarTodosComEstoqueZerado();
 
 
