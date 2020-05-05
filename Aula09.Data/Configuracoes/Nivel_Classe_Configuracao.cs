@@ -10,10 +10,7 @@ namespace Aula09.Dados.Configuracoes
             
             builder.ToTable("Nivel_Classe", "RPG");
 
-            builder.HasKey("CodFicha");
-            builder.HasKey("CodJogaodr");
-            builder.HasKey("CodNivel");
-            builder.HasKey("CodClasse");
+            builder.HasKey("CodFicha","CodJogador","CodNivel","CodClasse");
 
             builder.Property(f => f.CodFicha).HasColumnName("CodFicha");
             builder.Property(f => f.CodJogador).HasColumnName("CodJogador");

@@ -10,8 +10,7 @@ namespace Aula09.Dados.Configuracoes
             
             builder.ToTable("Proficiencia_Arma_Classe", "RPG");
 
-            builder.HasKey("CodArma");
-            builder.HasKey("CodClasse");
+            builder.HasKey("CodArma","CodClasse");
 
             builder.Property(f => f.CodArma).HasColumnName("CodArma");
             builder.Property(f => f.CodClasse).HasColumnName("CodClasse");
