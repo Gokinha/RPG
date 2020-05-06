@@ -10,9 +10,7 @@ namespace Aula09.Dados.Configuracoes
             
             builder.ToTable("Qtd_Magia_Ciclo", "RPG");
 
-            builder.HasKey("CodClasse");
-            builder.HasKey("CodNivel");
-            builder.HasKey("CodCicloMagia");
+            builder.HasKey("CodClasse", "CodNivel", "CodCicloMagia");
 
             builder.Property(f => f.CodClasse).HasColumnName("CodClasse");
             builder.Property(f => f.CodNivel).HasColumnName("CodNivel");

@@ -10,8 +10,7 @@ namespace Aula09.Dados.Configuracoes
             
             builder.ToTable("Monge", "RPG");
 
-            builder.HasKey("CodClasse");
-            builder.HasKey("CodNivel");
+            builder.HasKey("CodClasse", "CodNivel");
 
             builder.Property(f => f.CodClasse).HasColumnName("CodClasse");
             builder.Property(f => f.CodNivel).HasColumnName("CodNivel");

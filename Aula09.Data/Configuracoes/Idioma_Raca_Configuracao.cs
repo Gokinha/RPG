@@ -10,8 +10,7 @@ namespace Aula09.Dados.Configuracoes
             
             builder.ToTable("Idioma_Raca", "RPG");
 
-            builder.HasKey("CodRaca");
-            builder.HasKey("CodIdioma");
+            builder.HasKey("CodRaca", "CodIdioma");
 
             builder.Property(f => f.CodRaca).HasColumnName("CodRaca");
             builder.Property(f => f.CodIdioma).HasColumnName("CodIdioma");
