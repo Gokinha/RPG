@@ -5,28 +5,27 @@ using Aula09.Dominio;
 
 namespace Aula09.Servico
 {
-    public class Habilidade_Servico
+    public class Proficiencia_Pericia_Servico
     {
 
-        private readonly Habilidade_Repositorio _habilidade_Repositorio;
-        public Habilidade_Servico()
+        private readonly Proficiencia_Pericias_Repositorio _proficiencia_Pericia_Repositorio;
+        public Proficiencia_Pericia_Servico()
         {
-            _habilidade_Repositorio = new Habilidade_Repositorio();
+            _proficiencia_Pericia_Repositorio = new Proficiencia_Pericias_Repositorio();
         }
 
-
-        public NotificationResult Salvar(Habilidade_Servico entidade)
+        public NotificationResult Salvar(Proficiencia_Pericias entidade)
         {
             var notificationResult = new NotificationResult();
 
             try
             {
-                if (entidade.CodHabilidade == 0)
+                if (entidade.CodClasse == 0 || entidade.CodPericia == 0)
                     notificationResult.Add(new NotificationError("Qtde. de produtos no Estoque inválido.", NotificationErrorType.USER));
 
                 if (notificationResult.IsValid)
                 {
-                    _habilidade_Repositorio.Adicionar(entidade);
+                    _proficiencia_Pericia_Repositorio.Adicionar(entidade);
 
                     notificationResult.Add("Produto cadastrado com sucesso.");
                 }
@@ -41,14 +40,14 @@ namespace Aula09.Servico
             }
         }
 
-        public string Excluir(Habilidade entidade)
+        public string Excluir(Proficiencia_Pericias entidade)
         {
             return "";
         }
 
-        public IEnumerable<Habilidade> ListarTodosComEstoqueZerado()
+        public IEnumerable<Proficiencia_Pericias> ListarTodosComEstoqueZerado()
         {
-            return _habilidade_Repositorio.ListarTodosComEstoqueZerado();
+            return _proficiencia_Pericia_Repositorio.ListarTodosComEstoqueZerado();
         }
     }
 }
