@@ -11,5 +11,10 @@ namespace Aula09.Dados
         {
             return null;
         }
+
+        public void Adicionar(Arma_Propriedade_Arma entidade)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

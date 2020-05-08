@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Aula09.Comum.NotificationPattern;
 using Aula09.Dados;
 using Aula09.Dominio;
 
@@ -14,12 +15,31 @@ namespace Aula09.Servico
             _arma_Inventario_Repositorio = new Arma_Inventario_Repositorio();
         }
 
-
-        public string Salvar(Arma_Inventario entidade)
+        public NotificationResult Salvar(Arma_Inventario entidade)
         {
-            return "Ok";
-        }
+            var notificationResult = new NotificationResult();
 
+            try
+            {
+                if (entidade.CodArma == 0)
+                    notificationResult.Add(new NotificationError("Arma Classe não pode ser zero.", NotificationErrorType.USER));
+
+                if (notificationResult.IsValid)
+                {
+                    _arma_Inventario_Repositorio.Adicionar(entidade);
+
+                    notificationResult.Add("Arma Classe cadastrado com sucesso.");
+                }
+
+                notificationResult.Result = entidade;
+
+                return notificationResult;
+            }
+            catch (Exception ex)
+            {
+                return notificationResult.Add(new NotificationError(ex.Message));
+            }
+        }
         public string Excluir(Arma_Inventario entidade)
         {
             return "";

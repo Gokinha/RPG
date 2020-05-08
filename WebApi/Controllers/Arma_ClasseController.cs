@@ -23,7 +23,7 @@ namespace WebApi.Controllers
 
 
         [HttpPost("Salvar")]
-        public string Salvar(Arma_Classe entidade)
+        public NotificationResult Salvar(Arma_Classe entidade)
         {
             return arma_classe_Servico.Salvar(entidade);
         }

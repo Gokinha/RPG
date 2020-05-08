@@ -103,6 +103,7 @@ namespace Aula09.Dados
             modelBuilder.ApplyConfiguration(new Equipamento_Configuracao());
             modelBuilder.ApplyConfiguration(new Equipamentos_Inventario_Configuracao());
             modelBuilder.ApplyConfiguration(new Espacos_Magia_Configuracao());
+            modelBuilder.ApplyConfiguration(new Ficha_Configuracao());
             modelBuilder.ApplyConfiguration(new Ficha_Atributo_Configuracao());
             modelBuilder.ApplyConfiguration(new Ficha_Idioma_Configuracao());
             modelBuilder.ApplyConfiguration(new Ficha_Pericia_Configuracao());
@@ -118,8 +119,10 @@ namespace Aula09.Dados
             modelBuilder.ApplyConfiguration(new Material_Configuracao());
             modelBuilder.ApplyConfiguration(new Moeda_Configuracao());
             modelBuilder.ApplyConfiguration(new Monge_Configuracao());
+            modelBuilder.ApplyConfiguration(new Nivel_Configuracao());
             modelBuilder.ApplyConfiguration(new Nivel_Classe_Configuracao());
             modelBuilder.ApplyConfiguration(new Pericia_Configuracao());
+            modelBuilder.ApplyConfiguration(new Proficiencia_Arma_Configuracao());
             modelBuilder.ApplyConfiguration(new Proficiencia_Arma_Classe_Configuracao());
             modelBuilder.ApplyConfiguration(new Proficiencia_Arma_Raca_Configuracao());
             modelBuilder.ApplyConfiguration(new Proficiencia_Armadura_Configuracao());

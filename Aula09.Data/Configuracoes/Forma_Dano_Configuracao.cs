@@ -8,7 +8,7 @@ namespace Aula09.Dados.Configuracoes
         public void Configure(EntityTypeBuilder<Forma_Dano> builder)
         {
             
-            builder.ToTable("FormaDano","RPG");
+            builder.ToTable("Forma_Dano","RPG");
 
             builder.HasKey("CodFormaDano");
 
