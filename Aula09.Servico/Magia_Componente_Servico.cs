@@ -15,9 +15,30 @@ namespace Aula09.Servico
         }
 
 
-        public string Salvar(Magia_Componente entidade)
+        public NotificationResult Salvar(Magia_Componente entidade)
         {
-            return "Ok";
+            var notificationResult = new NotificationResult();
+
+            try
+            {
+                if (entidade.CodComponente == 0 || entidade.CodMagia == 0)
+                    notificationResult.Add(new NotificationError("Qtde. de produtos no Estoque inválido.", NotificationErrorType.USER));
+
+                if (notificationResult.IsValid)
+                {
+                    _magia_Componente_Repositorio.Adicionar(entidade);
+
+                    notificationResult.Add("Produto cadastrado com sucesso.");
+                }
+
+                notificationResult.Result = entidade;
+
+                return notificationResult;
+            }
+            catch (Exception ex)
+            {
+                return notificationResult.Add(new NotificationError(ex.Message));
+            }
         }
 
         public string Excluir(Magia_Componente entidade)

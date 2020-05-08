@@ -15,9 +15,30 @@ namespace Aula09.Servico
         }
 
 
-        public string Salvar(Idioma entidade)
+         public NotificationResult Salvar(Idioma entidade)
         {
-            return "Ok";
+            var notificationResult = new NotificationResult();
+
+            try
+            {
+                if (entidade.CodIdioma == 0)
+                    notificationResult.Add(new NotificationError("Qtde. de produtos no Estoque inválido.", NotificationErrorType.USER));
+
+                if (notificationResult.IsValid)
+                {
+                    _idioma_Repositorio.Adicionar(entidade);
+
+                    notificationResult.Add("Produto cadastrado com sucesso.");
+                }
+
+                notificationResult.Result = entidade;
+
+                return notificationResult;
+            }
+            catch (Exception ex)
+            {
+                return notificationResult.Add(new NotificationError(ex.Message));
+            }
         }
 
         public string Excluir(Idioma entidade)

@@ -14,10 +14,31 @@ namespace Aula09.Servico
             _proficiencia_Pericia_Repositorio = new Proficiencia_Pericias_Repositorio();
         }
 
-        public string Salvar(Proficiencia_Pericias entidade)
+
+        public NotificationResult Salvar(Proficiencia_Pericias entidade)
         {
-            return "Ok";
-        }
+            var notificationResult = new NotificationResult();
+
+            try
+            {
+                if (entidade.CodClasse == 0 || entidade.CodPericia == 0)
+                    notificationResult.Add(new NotificationError("Qtde. de produtos no Estoque inválido.", NotificationErrorType.USER));
+
+                if (notificationResult.IsValid)
+                {
+                    _proficiencia_Pericia_Repositorio.Adicionar(entidade);
+
+                    notificationResult.Add("Produto cadastrado com sucesso.");
+                }
+
+                notificationResult.Result = entidade;
+
+                return notificationResult;
+            }
+            catch (Exception ex)
+            {
+                return notificationResult.Add(new NotificationError(ex.Message));
+            }
 
         public string Excluir(Proficiencia_Pericias entidade)
         {

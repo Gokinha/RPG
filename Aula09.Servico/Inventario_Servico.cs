@@ -15,9 +15,30 @@ namespace Aula09.Servico
         }
 
 
-        public string Salvar(Inventario entidade)
+        public NotificationResult Salvar(Inventario entidade)
         {
-            return "Ok";
+            var notificationResult = new NotificationResult();
+
+            try
+            {
+                if (entidade.CodFicha == 0 || entidade.CodJogador == 0)
+                    notificationResult.Add(new NotificationError("Qtde. de produtos no Estoque inválido.", NotificationErrorType.USER));
+
+                if (notificationResult.IsValid)
+                {
+                    _inventario_Repositorio.Adicionar(entidade);
+
+                    notificationResult.Add("Produto cadastrado com sucesso.");
+                }
+
+                notificationResult.Result = entidade;
+
+                return notificationResult;
+            }
+            catch (Exception ex)
+            {
+                return notificationResult.Add(new NotificationError(ex.Message));
+            }
         }
 
         public string Excluir(Inventario entidade)
