@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Aula09.Comum.NotificationPattern;
 using Aula09.Dados;
 using Aula09.Dominio;
 
@@ -40,6 +41,7 @@ namespace Aula09.Servico
             {
                 return notificationResult.Add(new NotificationError(ex.Message));
             }
+        }
 
         public string Excluir(Proficiencia_Arma entidade)
         {
@@ -52,3 +54,6 @@ namespace Aula09.Servico
         }
     }
 }
+
+    
+

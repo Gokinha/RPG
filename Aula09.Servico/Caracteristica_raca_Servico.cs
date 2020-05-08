@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Aula09.Comum.NotificationPattern;
 using Aula09.Dados;
 using Aula09.Dominio;
 
@@ -14,10 +15,30 @@ namespace Aula09.Servico
             _caracteristica_Raca_Repositorio = new Caracteristica_Raca_Repositorio();
         }
 
-
-        public string Salvar(Caracteristica_Raca entidade)
+        public NotificationResult Salvar(Caracteristica_Raca entidade)
         {
-            return "Ok";
+            var notificationResult = new NotificationResult();
+
+            try
+            {
+                if (entidade.CodCaracteristicas == 0)
+                    notificationResult.Add(new NotificationError("CodCaracteristicas não pode ser zero.", NotificationErrorType.USER));
+
+                if (notificationResult.IsValid)
+                {
+                    _caracteristica_Raca_Repositorio.Adicionar(entidade);
+
+                    notificationResult.Add("Caracteristica Raca cadastrado com sucesso.");
+                }
+
+                notificationResult.Result = entidade;
+
+                return notificationResult;
+            }
+            catch (Exception ex)
+            {
+                return notificationResult.Add(new NotificationError(ex.Message));
+            }
         }
 
         public string Excluir(Caracteristica_Raca entidade)

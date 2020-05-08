@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Aula09.Comum.NotificationPattern;
 using Aula09.Dados;
 using Aula09.Dominio;
 
@@ -21,14 +22,14 @@ namespace Aula09.Servico
 
             try
             {
-                if (entidade.CodFuria == 0)
-                    notificationResult.Add(new NotificationError("Qtde. de produtos no Estoque inválido.", NotificationErrorType.USER));
+                if (entidade.CodClasse == 0)
+                    notificationResult.Add(new NotificationError("Cod Classe não pode ser zero.", NotificationErrorType.USER));
 
                 if (notificationResult.IsValid)
                 {
                     _furia_Repositorio.Adicionar(entidade);
 
-                    notificationResult.Add("Produto cadastrado com sucesso.");
+                    notificationResult.Add("Furia cadastrada.");
                 }
 
                 notificationResult.Result = entidade;

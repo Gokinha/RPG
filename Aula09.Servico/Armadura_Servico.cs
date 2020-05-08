@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Aula09.Comum.NotificationPattern;
 using Aula09.Dados;
 using Aula09.Dominio;
 
@@ -14,10 +15,30 @@ namespace Aula09.Servico
             _armadura_Repositorio = new Armadura_Repositorio();
         }
 
-
-        public string Salvar(Armadura entidade)
+        public NotificationResult Salvar(Armadura entidade)
         {
-            return "Ok";
+            var notificationResult = new NotificationResult();
+
+            try
+            {
+                if (entidade.CodArmadura == 0)
+                    notificationResult.Add(new NotificationError("Armadura não pode ser zero.", NotificationErrorType.USER));
+
+                if (notificationResult.IsValid)
+                {
+                    _armadura_Repositorio.Adicionar(entidade);
+
+                    notificationResult.Add("Armadura cadastrada com sucesso.");
+                }
+
+                notificationResult.Result = entidade;
+
+                return notificationResult;
+            }
+            catch (Exception ex)
+            {
+                return notificationResult.Add(new NotificationError(ex.Message));
+            }
         }
 
         public string Excluir(Armadura entidade)

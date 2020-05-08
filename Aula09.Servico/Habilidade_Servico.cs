@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Aula09.Comum.NotificationPattern;
 using Aula09.Dados;
 using Aula09.Dominio;
 
@@ -15,7 +16,7 @@ namespace Aula09.Servico
         }
 
 
-        public NotificationResult Salvar(Habilidade_Servico entidade)
+        public NotificationResult Salvar(Habilidade entidade)
         {
             var notificationResult = new NotificationResult();
 

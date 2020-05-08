@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Aula09.Comum.NotificationPattern;
 using Aula09.Dados;
 using Aula09.Dominio;
 
@@ -15,9 +16,30 @@ namespace Aula09.Servico
         }
 
 
-        public string Salvar(Ficha_Idioma entidade)
+        public NotificationResult Salvar(Ficha_Idioma entidade)
         {
-            return "Ok";
+            var notificationResult = new NotificationResult();
+
+            try
+            {
+                if (entidade.CodIdioma == 0)
+                    notificationResult.Add(new NotificationError("Cod Idioma não pode ser zero.", NotificationErrorType.USER));
+
+                if (notificationResult.IsValid)
+                {
+                    _ficha_Idioma_Repositorio.Adicionar(entidade);
+
+                    notificationResult.Add("Ficha Idioma cadastrado com sucesso.");
+                }
+
+                notificationResult.Result = entidade;
+
+                return notificationResult;
+            }
+            catch (Exception ex)
+            {
+                return notificationResult.Add(new NotificationError(ex.Message));
+            }
         }
 
         public string Excluir(Ficha_Idioma entidade)

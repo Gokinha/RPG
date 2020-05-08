@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Aula09.Comum.NotificationPattern;
 using Aula09.Dados;
 using Aula09.Dominio;
 
@@ -15,9 +16,30 @@ namespace Aula09.Servico
         }
 
 
-        public string Salvar(Atributo entidade)
+        public NotificationResult Salvar(Atributo entidade)
         {
-            return "Ok";
+            var notificationResult = new NotificationResult();
+
+            try
+            {
+                if (entidade.CodAtributo == 0)
+                    notificationResult.Add(new NotificationError("Atributo não pode ser zero.", NotificationErrorType.USER));
+
+                if (notificationResult.IsValid)
+                {
+                    _atributo_Repositorio.Adicionar(entidade);
+
+                    notificationResult.Add("Atributo cadastrado com sucesso.");
+                }
+
+                notificationResult.Result = entidade;
+
+                return notificationResult;
+            }
+            catch (Exception ex)
+            {
+                return notificationResult.Add(new NotificationError(ex.Message));
+            }
         }
 
         public string Excluir(Atributo entidade)
