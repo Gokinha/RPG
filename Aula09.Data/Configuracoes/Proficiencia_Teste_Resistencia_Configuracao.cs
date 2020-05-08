@@ -10,8 +10,7 @@ namespace Aula09.Dados.Configuracoes
             
             builder.ToTable("Proficiencia_Teste_Resistencia", "RPG");
 
-            builder.HasKey("CodClasse");
-            builder.HasKey("CodAtributo");
+            builder.HasKey("CodClasse,CodAtributo");
 
             builder.Property(f => f.CodClasse).HasColumnName("CodClasse");
             builder.Property(f => f.CodAtributo).HasColumnName("CodAtributo");

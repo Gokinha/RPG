@@ -10,11 +10,12 @@ namespace Aula09.Dados.Configuracoes
             
             builder.ToTable("Espaco_Magia", "RPG");
 
-            builder.HasKey("CodClasse");
-            builder.HasKey("CodNivel");
+            builder.HasKey("CodClasse","CodNivel");
 
             builder.Property(f => f.CodClasse).HasColumnName("CodClasse");
             builder.Property(f => f.CodNivel).HasColumnName("CodNivel");
+            builder.Property(f => f.QtdMagia).HasColumnName("QtdMagia");
+
         }
     }
 }

@@ -15,6 +15,7 @@ namespace Aula09.Servico
         }
 
 
+
         public NotificationResult Salvar(Proficiencia_Arma entidade)
         {
             var notificationResult = new NotificationResult();
@@ -39,7 +40,6 @@ namespace Aula09.Servico
             {
                 return notificationResult.Add(new NotificationError(ex.Message));
             }
-        }
 
         public string Excluir(Proficiencia_Arma entidade)
         {

@@ -14,6 +14,7 @@ namespace Aula09.Servico
             _proficiencia_Pericia_Repositorio = new Proficiencia_Pericias_Repositorio();
         }
 
+
         public NotificationResult Salvar(Proficiencia_Pericias entidade)
         {
             var notificationResult = new NotificationResult();
@@ -38,7 +39,6 @@ namespace Aula09.Servico
             {
                 return notificationResult.Add(new NotificationError(ex.Message));
             }
-        }
 
         public string Excluir(Proficiencia_Pericias entidade)
         {
