@@ -23,7 +23,7 @@ namespace WebApi.Controllers
 
 
         [HttpPost("Salvar")]
-        public string Salvar(Idioma entidade)
+        public NotificationResult Salvar(Idioma entidade)
         {
             return idioma_Servico.Salvar(entidade);
         }

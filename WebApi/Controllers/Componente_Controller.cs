@@ -24,7 +24,7 @@ namespace WebApi.Controllers
 
 
         [HttpPost("Salvar")]
-        public string Salvar(Componente entidade)
+        public NotificationResult Salvar(Componente entidade)
         {
             return componente_Servico.Salvar(entidade);
         }

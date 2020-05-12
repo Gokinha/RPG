@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Aula09.Dados;
 using Aula09.Dominio;
+using Aula09.Comum.NotificationPattern;
 
 namespace Aula09.Servico
 {
@@ -21,7 +22,7 @@ namespace Aula09.Servico
 
             try
             {
-                if (entidade.CodArma == 0)
+                if (entidade.CodPropriedadeArma == 0)
                     notificationResult.Add(new NotificationError("Qtde. de produtos no Estoque inválido.", NotificationErrorType.USER));
 
                 if (notificationResult.IsValid)

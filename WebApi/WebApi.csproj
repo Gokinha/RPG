@@ -8,8 +8,8 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile>C:\Users\Silvao\source\repos\RPG\WebApi\WebApi.xml</DocumentationFile>
-    <WarningLevel>2</WarningLevel>
+    <DocumentationFile>C:\Users\Silvao\source\repos\Gokinha\RPG\WebApi\WebApi.xml</DocumentationFile>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
 
   <ItemGroup>

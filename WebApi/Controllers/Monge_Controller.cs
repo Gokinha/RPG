@@ -23,7 +23,7 @@ namespace WebApi.Controllers
 
 
         [HttpPost("Salvar")]
-        public string Salvar(Monge entidade)
+        public NotificationResult Salvar(Monge entidade)
         {
             return monge_Servico.Salvar(entidade);
         }

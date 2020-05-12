@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Aula09.Dados;
 using Aula09.Dominio;
+using Aula09.Comum.NotificationPattern;
 
 namespace Aula09.Servico
 {

@@ -24,7 +24,7 @@ namespace WebApi.Controllers
 
 
         [HttpPost("Salvar")]
-        public string Salvar(Equipamentos_Inventario entidade)
+        public NotificationResult Salvar(Equipamentos_Inventario entidade)
         {
             return equipamento_Inventario_Servico.Salvar(entidade);
         }

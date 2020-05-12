@@ -23,7 +23,7 @@ namespace WebApi.Controllers
 
 
         [HttpPost("Salvar")]
-        public string Salvar(Bonus_Proficiencia entidade)
+        public NotificationResult Salvar(Bonus_Proficiencia entidade)
         {
             return bonus_Proficiencia_Servico.Salvar(entidade);
         }
