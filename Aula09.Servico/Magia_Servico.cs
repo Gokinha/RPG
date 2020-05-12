@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Aula09.Comum.NotificationPattern;
 using Aula09.Dados;
 using Aula09.Dominio;
 
@@ -15,13 +16,13 @@ namespace Aula09.Servico
         }
 
 
-        public NotificationResult Salvar(Magia_Servico entidade)
+        public NotificationResult Salvar(Magia entidade)
         {
             var notificationResult = new NotificationResult();
 
             try
             {
-                if (entidade.CodMagia == 0)
+                if (entidade. CodMagia== 0)
                     notificationResult.Add(new NotificationError("Qtde. de produtos no Estoque inválido.", NotificationErrorType.USER));
 
                 if (notificationResult.IsValid)

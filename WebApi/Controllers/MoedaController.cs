@@ -23,7 +23,7 @@ namespace WebApi.Controllers
 
 
         [HttpPost("Salvar")]
-        public string Salvar(Moeda entidade)
+        public NotificationResult Salvar(Moeda entidade)
         {
             return moeda_Servico.Salvar(entidade);
         }
