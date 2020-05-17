@@ -22,7 +22,7 @@ namespace Aula09.Servico
 
             try
             {
-                if (entidade.CodMagia == 0)
+                if (entidade. CodMagia== 0)
                     notificationResult.Add(new NotificationError("Qtde. de produtos no Estoque inválido.", NotificationErrorType.USER));
 
                 if (notificationResult.IsValid)
