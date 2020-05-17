@@ -7,7 +7,7 @@ using Aula09.Comum.NotificationPattern;
 
 namespace XUnitRPG
 {
-    public class TesteArma_Servico
+    public class TesteArma_Servico 
     {
         [Fact]
         public void TesteSalvar()
