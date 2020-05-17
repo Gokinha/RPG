@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Aula09.Comum.NotificationPattern;
 using Aula09.Dados;
 using Aula09.Dominio;
 
@@ -15,7 +16,7 @@ namespace Aula09.Servico
         }
 
 
-        public NotificationResult Salvar(Magia_Servico entidade)
+        public NotificationResult Salvar(Magia entidade)
         {
             var notificationResult = new NotificationResult();
 

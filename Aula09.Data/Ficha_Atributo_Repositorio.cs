@@ -1,6 +1,7 @@
 ﻿using Aula09.Dominio;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace Aula09.Dados
@@ -9,7 +10,9 @@ namespace Aula09.Dados
     {
         public IEnumerable<Ficha_Atributo> ListarTodosComEstoqueZerado()
         {
-            return null;
+            return Contexto
+                            .Ficha_Atributo
+                            .ToList();
         }
     }
 }

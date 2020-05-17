@@ -23,7 +23,7 @@ namespace WebApi.Controllers
 
 
         [HttpPost("Salvar")]
-        public string Salvar(Atributo entidade)
+        public NotificationResult Salvar(Atributo entidade)
         {
             return atributo_Servico.Salvar(entidade);
         }

@@ -23,7 +23,7 @@ namespace WebApi.Controllers
 
 
         [HttpPost("Salvar")]
-        public string Salvar(Ataque_Furtivo entidade)
+        public NotificationResult Salvar(Ataque_Furtivo entidade)
         {
             return ataque_Furtivo_Servico.Salvar(entidade);
         }
