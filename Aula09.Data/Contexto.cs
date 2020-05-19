@@ -12,7 +12,7 @@ namespace Aula09.Dados
         //1. CLASSES - ENTIDADES - TABELAS
         //1. INICIO
         public DbSet<Arma> Arma { get; set; }
-        public DbSet<Arma_Classe> Arma_Classe { get; set; }
+        public DbSet<Arma_Classe> Arma_Classes { get; set; }
         public DbSet<Arma_Inventario> Arma_Inventario { get; set; }
         public DbSet<Arma_Propriedade_Arma> Arma_Propriedade_Arma { get; set; }
         public DbSet<Armadura> Armadura { get; set; }
