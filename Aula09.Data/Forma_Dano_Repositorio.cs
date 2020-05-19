@@ -9,7 +9,10 @@ namespace Aula09.Dados
     {
         public IEnumerable<Forma_Dano> ListarTodosComEstoqueZerado()
         {
-            return null;
+            return Contexto
+                .Forma_Dano;
+                //.CodFormaDano(f => f.Marca)
+                //.ToList();
         }
     }
 }

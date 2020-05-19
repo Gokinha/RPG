@@ -28,6 +28,18 @@ namespace WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            //services.AddCors(options => options.AddPolicy("GET,POST", x =>
+            //{
+            //    x.WithOrigins("http://localhost:3000").AllowAnyMethod().AllowAnyHeader();
+            //}));
+
+            services.AddCors();
+
+
+
+
+
             services.AddControllers();
             services.AddSwaggerGen(c => {
 
@@ -48,17 +60,29 @@ namespace WebApi
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        {
+            if (env.IsDevelopment())
             {
-                if (env.IsDevelopment())
-                {
-                    app.UseDeveloperExceptionPage();
-                }
+                app.UseDeveloperExceptionPage();
+            }
 
-                // Ativando middlewares para uso do Swagger
-                app.UseSwagger();
+
+            app.UseCors(x =>
+            {
+                x.WithOrigins("http://localhost:3000");
+                x.AllowAnyMethod();
+                x.AllowAnyHeader();
+                x.AllowCredentials();
+            });
+
+
+
+            // Ativando middlewares para uso do Swagger
+            app.UseSwagger();
                 app.UseSwaggerUI(c => {
                     c.SwaggerEndpoint("/swagger/v1/swagger.json", "Indicadores Econômicos V1");
                 });
+
 
                 app.UseHttpsRedirection();
 

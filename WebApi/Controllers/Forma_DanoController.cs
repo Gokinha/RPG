@@ -18,7 +18,8 @@ namespace WebApi.Controllers
             forma_Dano_Servico = new Forma_Dano_Servico();
         }
 
-        [HttpGet("Ativos")]
+        [HttpGet]
+        [Route("Ativos")]
         public IEnumerable<Forma_Dano> Ativos() => forma_Dano_Servico.ListarTodosComEstoqueZerado();
 
 
