@@ -8,4 +8,8 @@
     <ProjectReference Include="..\Aula09.Comum\Aula09.Comum.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Interface\Servico\" />
+  </ItemGroup>
+
 </Project>
